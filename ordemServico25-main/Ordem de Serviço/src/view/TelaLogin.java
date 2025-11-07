@@ -56,9 +56,9 @@ public class TelaLogin extends javax.swing.JFrame {
         try {
             conexao = ModuloConexao.conectar();
             if (conexao != null) {
-                jLblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/dbok.png")));
+               jLblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/dbok.png")));
             } else {
-                jLblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("//icones/dberror.png")));
+                jLblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/dberror.png")));
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -69,7 +69,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, ex);
             }
         }
-    };
+    }
 
     /**
      * Método responsável pela autenticação e gestão de perfil do usuário
@@ -145,6 +145,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel2.setText("Senha");
 
         jBtnLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBtnLogin.setMnemonic('e');
         jBtnLogin.setText("Entrar");
         jBtnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,7 +165,7 @@ public class TelaLogin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -178,12 +179,12 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLblStatus)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTxtUsario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -192,10 +193,10 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(jTxtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtnLogin)
                     .addComponent(jLblStatus))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         setSize(new java.awt.Dimension(335, 187));
@@ -224,11 +225,13 @@ public class TelaLogin extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro");
+            
         }
     }//GEN-LAST:event_jBtnLoginActionPerformed
 
     private void jBtnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jBtnLoginKeyPressed
-               try {
+       // Botao entrar
+        try {
             String usario, senha;
            
             usario = jTxtUsario.getText();
@@ -244,6 +247,7 @@ public class TelaLogin extends javax.swing.JFrame {
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "erro");
+            
         }
     }//GEN-LAST:event_jBtnLoginKeyPressed
 

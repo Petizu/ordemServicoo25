@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author geral
+ * @author clebe
  */
 public class TesteConexao {
     
